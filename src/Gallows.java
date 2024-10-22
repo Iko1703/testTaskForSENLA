@@ -12,9 +12,10 @@ public class Gallows {
 
     private static void ChosingTheme()
     {
-        System.out.println(" Выберите тему для игры:\n\nприрода\n\nгеография\n\nмузыка\n\nНапшиите в консоль понравившийся вариант.\n");
+        System.out.println(" Выберите тему для игры:\n\nприрода\n\nгеография\n\nмузыка\n\nНапишите в консоль понравившийся вариант.\n");
         String theme = scanner.nextLine();
-        System.out.println("\nВыбранная тема - " + theme + "\n\nУдачи!");
+        theme = theme.toLowerCase();
+        theme = theme.trim();
         variantsWords.clear();
         switch (theme) {
             case "природа":
@@ -41,8 +42,9 @@ public class Gallows {
             default:
                 System.out.println("\n Неверно указана тема, повторите попытку\n");
                 ChosingTheme();
-                break;           
+                return;           
         }
+        System.out.println("\nВыбранная тема - " + theme + "\n\nУдачи!");
     }
 
     private static String PictureGenerate(int life)
@@ -179,7 +181,7 @@ public class Gallows {
 
         continueGame = scanner.next();
 
-        if("да".equals(continueGame))
+        if("да".equals(continueGame.toLowerCase()))
         {
             Game();
         }
