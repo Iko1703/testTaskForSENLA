@@ -1,18 +1,9 @@
-## Getting Started
+В данном репозитории представлено тестовое задание для курса Java с 0 компании СЕНЛА.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+в пакете "Gallows" - представлена игра "виселица", с визуализацией игрового здоровья.
 
-## Folder Structure
+в пакете "ExchangeRate" - представлен конвертор валют, который имеет константные значения курсов валют, а также имеет возможность собственного добавления валют и их курса (фиксированно значение валют в размере 5 штук) по отношению главной валюты.
 
-The workspace contains two folders by default, where:
+в пакете "PasswordGenerator" - представлен генератор паролей.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Тестовое задание выполнил Кочетов Иван.
