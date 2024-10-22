@@ -37,7 +37,7 @@ public class PasswordGenerator
 
     private static String GetDigitForNewPassword(Map<Integer,Integer> type)
     {
-        Integer randomKey = getRandomKey(type);
+        Integer randomKey = GetRandomKey(type);
         int randomValue = random.nextInt(type.get(randomKey));
         int decimalCodePoint = randomKey + randomValue;
         char[] charArray = Character.toChars(decimalCodePoint);
@@ -45,7 +45,7 @@ public class PasswordGenerator
         return  newDigit;
     }
 
-    private static Integer getRandomKey(Map<Integer, Integer> map) {
+    private static Integer GetRandomKey(Map<Integer, Integer> map) {
         List<Integer> keys = new ArrayList<>(map.keySet());
         return keys.get(random.nextInt(keys.size()));
     }

@@ -16,7 +16,7 @@ public class ExchangeRate {
     private static Scanner scanner = new Scanner(System.in, "Cp866");
     private static String input = "";
 
-    private  static double convert(String fromCurrency, String toCurrency, double amount) {
+    private  static double Convert(String fromCurrency, String toCurrency, double amount) {
         double amountInUSD = amount * exchangeRates.get(fromCurrency);
         return amountInUSD / exchangeRates.get(toCurrency);
     }
@@ -63,7 +63,7 @@ public class ExchangeRate {
                 continue;
         }
         }
-        double convertedAmount = convert(fromCurrency, toCurrency, amount);
+        double convertedAmount = Convert(fromCurrency, toCurrency, amount);
         System.out.printf("Конвертированная сумма: %.2f %s%n", convertedAmount, toCurrency);
         System.out.println("Хотите повторно провести конвертацию? Напишите - да, для продолжения, любой другой вариант - для завершения работы программы");
 
@@ -97,6 +97,11 @@ public class ExchangeRate {
             { 
                 System.out.println(MessageFormat.format("Укажите название {0} валюты (в сокращенном формате 3 символов)",i));
                 nameOfCurrency = scanner.nextLine();
+                if (exchangeRates.containsKey(nameOfCurrency.toUpperCase()))
+                {
+                    System.out.println("Данная валюта уже имеется в словаре!");
+                    continue;
+                }
                 if (nameOfCurrency.length() != 3)
                 {
                     System.out.println("Некорректно указано название");
